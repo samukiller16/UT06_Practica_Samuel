@@ -1,6 +1,4 @@
 .principal {
-  display: grid;
-  grid-template-columns: 70% 30%;
   margin-top: 90px;
   margin-left: 30px;
   margin-bottom: 10px;
@@ -8,21 +6,21 @@
 
 .food {
   width: 300px;
-  background-color: #fff; /* Cambia el fondo según tu diseño */
-  border: 1px solid #ddd; /* Cambia el borde según tu diseño */
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #333; /* Cambia el color del texto según tu diseño */
+  color: #333;
   overflow: hidden;
 }
 
 .food__title {
   text-align: center;
   margin-top: 10px;
-  color: #ffd700; /* Cambia el color del título según tu diseño */
+  color: #ffd700;
 }
 
 .card__figure {
@@ -45,7 +43,7 @@
 .card__title {
   font-size: 24px;
   margin: 0;
-  color: #ffd700; /* Cambia el color del título según tu diseño */
+  color: #ffd700;
 }
 
 .card__subtitle {
@@ -67,43 +65,10 @@
 
 section {
     display: grid;
-    grid-template-columns: repeat(3,33%);
+    grid-auto-flow: column;
+    justify-content: space-around;
     gap: 10px;
     margin-top: 20px;
-}
-
-form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
-}
-
-.form__label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-.form__input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  box-sizing: border-box;
-}
-
-.form__button {
-  background-color: #ffd700;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.form__button:hover {
-  background-color: #e5bb00;
 }
 
 /* Categories */
@@ -131,6 +96,23 @@ form {
 }
 .cat-list .cat-list-image img {
 	width: 100%;
+}
+
+#category-list a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+h1{
+  text-align: center;
+}
+
+figcaption{
+  text-align: center;
+}
+
+#category-list a:hover{
+  color: #c5a800;
 }
 
 #categories #category-list{
@@ -199,9 +181,35 @@ form {
 
 /* Listado de productos */
 
+#single-product{
+  border: 1px solid #c5a800;
+}
+
+#single-product button{
+  background-color: #c5a800;
+  border-color: black;
+}
+
 .card-product-list,
 .card-product-grid {
     margin-bottom: 0
+}
+
+#newWinNav{
+  background-color: #ffd700;
+  margin-bottom: 600px;
+}
+
+#newWinNav h1{
+  background-color: #ffd700;
+  color: #171615;
+  font-weight: bold;
+  margin-bottom: 300px;
+  margin: auto;
+}
+
+#newWinProd{
+  margin-top: 100px;
 }
 
 .card {

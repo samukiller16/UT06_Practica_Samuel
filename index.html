@@ -41,25 +41,21 @@
       >
         <ul id="navPrinc">
           <li>
-            <a href="index.html" itemprop="url" id="init"
+            <a href="#" itemprop="url" id="init"
               ><img src="img/RestauranteLogo.png" alt="Logo" itemprop="image"
             /></a>
           </li>
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="#">Ubicación</a></li>
-          <li><a href="#">Menú</a></li>
           <li><a href="#">Contacto</a></li>
-          <li><a href="#">Reservas</a></li>
+          <li><a href="reservas.html">Reservas</a></li>
           
         </ul>
       </nav>
     </header>
     <nav id="breadcrumb" aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-        <li class="breadcrumb-item active" aria-current="page">
-          Página Actual
-        </li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="index.html">Inicio</a></li>
       </ol>
     </nav>
       <div class="principal">
@@ -160,76 +156,7 @@
           </article>
         </section>
 
-        <aside itemscope itemtype="http://schema.org/SearchAction">
-          <form
-            id="reservaForm"
-            action=""
-            method="get"
-            itemprop="potentialAction"
-          >
-            <label class="form__label" for="nombre">Nombre:</label>
-            <input
-              class="form__input"
-              type="text"
-              id="nombre"
-              name="nombre"
-              pattern="[A-Za-záéíóúÁÉÍÓÚ\s]+"
-              required
-            />
-
-            <label class="form__label" for="apellidos">Apellidos:</label>
-            <input
-              class="form__input"
-              type="text"
-              id="apellidos"
-              name="apellidos"
-              pattern="[A-Za-záéíóúÁÉÍÓÚ\s]+"
-              required
-            />
-
-            <label class="form__label" for="ocupantes"
-              >Número de Ocupantes:</label
-            >
-            <input
-              class="form__input"
-              type="number"
-              id="ocupantes"
-              name="ocupantes"
-              min="1"
-              required
-            />
-
-            <label class="form__label" for="fecha">Fecha:</label>
-            <input
-              class="form__input"
-              type="date"
-              id="fecha"
-              name="fecha"
-              required
-            />
-
-            <label class="form__label" for="hora">Hora:</label>
-            <input
-              class="form__input"
-              type="time"
-              id="hora"
-              name="hora"
-              required
-            />
-
-            <label class="form__label" for="telefono">Teléfono:</label>
-            <input
-              class="form__input"
-              type="tel"
-              id="telefono"
-              name="telefono"
-              pattern="[0-9]{9}"
-              required
-            />
-
-            <button class="form__button" type="submit">Reservar</button>
-          </form>
-        </aside>
+        
       </div>
       <!-- CATEGORIES -->
       <div id="categories" data-type="list" class="container cat-list">

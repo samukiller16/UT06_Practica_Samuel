@@ -27,28 +27,36 @@ class RestaurantController{
     
         this[MODEL].addCategory(category1, category2, category3);
 
-        const dish1 = this[MODEL].createDish("Pizza jamón", "Pizza mediana de jamón york", ["Jamón York", "Pan", "Queso"], "img/pizza1.jpg");
-        const dish2 = this[MODEL].createDish("Pizza bacon", "Pizza mediana de bacon y cebolla", ["Bacon","Cebolla", "Pan", "Queso"], "img/pizza2.jpg");
-        const dish3 = this[MODEL].createDish("Pizza Ternera", "Pizza mediana de ternera y cebolla", ["Ternera","Cebolla", "Pan", "Queso"], "img/pizza3.jpg");
-        const dish4 = this[MODEL].createDish("Hamburguesa doble", "Hamburguesa con doble carne", ["Ternera", "Pan", "Queso", "Cebolla"], "img/burger1.png");
-        const dish5 = this[MODEL].createDish("Hamburguesa huevo", "Hamburguesa con huevo", ["Ternera", "Pan", "Huevo", "Cebolla"], "img/burger2.jpg");
-        const dish6 = this[MODEL].createDish("Hamburguesa completa", "Hamburguesa ingredientes varios", ["Ternera", "Tomate", "Pan", "Queso", "Cebolla", "Huevo"], "img/burger3.jpg");
-        const dish7 = this[MODEL].createDish("Baguette vegetal", "Baguette hecha de vegetales", ["Lechuga","Tomate","Maíz", "Pan", "Queso"], "img/baguette1.jpg");
-        const dish8 = this[MODEL].createDish("Baguette bacon queso", "Baguette bacon/queso", ["Pan","Bacon","Queso"], "img/baguette2.jpg");
-        const dish9 = this[MODEL].createDish("Baguette calamares", "Baguette de calamares", ["Pan", "Calamares", "Queso"], "img/baguette3.jpg");
+        const dish1 = this[MODEL].createDish("Pizza jamón", "Pizza mediana de jamón york - 5€", ["Jamón York", "Pan", "Queso"], "img/pizza1.jpg");
+        const dish2 = this[MODEL].createDish("Pizza bacon", "Pizza mediana de bacon y cebolla - 6€", ["Bacon","Cebolla", "Pan", "Queso"], "img/pizza2.jpg");
+        const dish3 = this[MODEL].createDish("Pizza Ternera", "Pizza mediana de ternera y cebolla - 6,5€", ["Ternera","Cebolla", "Pan", "Queso"], "img/pizza3.jpg");
+        const dish4 = this[MODEL].createDish("Hamburguesa doble", "Hamburguesa con doble carne - 4,5€", ["Ternera", "Pan", "Queso", "Cebolla"], "img/burger1.png");
+        const dish5 = this[MODEL].createDish("Hamburguesa huevo", "Hamburguesa con huevo - 4€", ["Ternera", "Pan", "Huevo", "Cebolla"], "img/burger2.jpg");
+        const dish6 = this[MODEL].createDish("Hamburguesa completa", "Hamburguesa ingredientes varios - 5,5€", ["Ternera", "Tomate", "Pan", "Queso", "Cebolla", "Huevo"], "img/burger3.jpg");
+        const dish7 = this[MODEL].createDish("Baguette vegetal", "Baguette hecha de vegetales - 3€", ["Lechuga","Tomate","Maíz", "Pan", "Queso"], "img/baguette1.jpg");
+        const dish8 = this[MODEL].createDish("Baguette bacon queso", "Baguette bacon/queso - 4€", ["Pan","Bacon","Queso"], "img/baguette2.jpg");
+        const dish9 = this[MODEL].createDish("Baguette calamares", "Baguette de calamares - 4€", ["Pan", "Calamares", "Queso"], "img/baguette3.jpg");
+        const dish10 = this[MODEL].createDish("Pizza 4 Quesos", "Pizza mediana de 4 quesos distintos - 6€", ["Pan", "Queso"], "img/pizza4.jpg");
+        const dish11 = this[MODEL].createDish("Hamburguesa ciervo", "Hamburguesa con carne de ciervo - 5,5€", ["Carne de ciervo", "Pan", "Queso", "Cebolla"], "img/burger4.jpg");
+        const dish12 = this[MODEL].createDish("Baguette lomo", "Baguette de lomo a la plancha - 4€", ["Tomate","Lomo", "Pan", "Queso"], "img/baguette4.jpg");
 
-        this[MODEL].addDish(dish1, dish2, dish3, dish4, dish5, dish6, dish7, dish8, dish9);
+
+
+        this[MODEL].addDish(dish1, dish2, dish3, dish4, dish5, dish6, dish7, dish8, dish9, dish10, dish11, dish12);
 
 
         this[MODEL].assignCategoryToDish(dish1, category2);
         this[MODEL].assignCategoryToDish(dish2, category2);
         this[MODEL].assignCategoryToDish(dish3, category2);
+        this[MODEL].assignCategoryToDish(dish10, category2);
         this[MODEL].assignCategoryToDish(dish4, category1);
         this[MODEL].assignCategoryToDish(dish5, category1);
         this[MODEL].assignCategoryToDish(dish6, category1);
+        this[MODEL].assignCategoryToDish(dish11, category1);
         this[MODEL].assignCategoryToDish(dish7, category3);
         this[MODEL].assignCategoryToDish(dish8, category3);
         this[MODEL].assignCategoryToDish(dish9, category3);
+        this[MODEL].assignCategoryToDish(dish12, category3);
 
         const allergen1 = this[MODEL].createAllergen("Gluten", "Alérgeno Gluten");
         const allergen2 = this[MODEL].createAllergen("Huevo", "Alérgeno Huevo");
@@ -66,6 +74,9 @@ class RestaurantController{
         this[MODEL].assignAllergenToDish(dish7, allergen1, allergen3);
         this[MODEL].assignAllergenToDish(dish8, allergen1, allergen3);
         this[MODEL].assignAllergenToDish(dish9, allergen1, allergen3, allergen4);
+        this[MODEL].assignAllergenToDish(dish10, allergen1, allergen3);
+        this[MODEL].assignAllergenToDish(dish11, allergen1, allergen3);
+        this[MODEL].assignAllergenToDish(dish12, allergen1, allergen3);
 
 
         const menu1 = this[MODEL].createMenu("PizzaAndFriends", "Pizzas escogidas para compartir en grupo");
@@ -93,10 +104,10 @@ class RestaurantController{
     onLoad = () => {
         this[LOAD_RESTAURANT_OBJECTS]();
         this.onAddCategory();
-        this[VIEW].showDishes(this[MODEL].getterDishes());
         this.onAddAllergen();
         this.onAddMenu();
         this.onAddRestaurant();
+        this[VIEW].createWinCloser();
     };
 
     onInit = () => {
@@ -104,6 +115,7 @@ class RestaurantController{
         this[VIEW].bindProductsCategoryList(
             this.handleProductsCategoryList,
         );
+        this[VIEW].showDishes(this[MODEL].getterDishes());
         this[VIEW].bindShowRandProduct(this.handleShowProduct);
     }
 
@@ -141,7 +153,12 @@ class RestaurantController{
 
     handleProductsCategoryList = (name) => {
         const category = this[MODEL].createCategory(name, "");
-        this[VIEW].listProducts(this[MODEL].getDishesInCategory(category), category.name);
+        const dishes = this[MODEL].getDishesInCategory(category);
+        this[VIEW].listProducts(dishes, category.name);
+
+        this[VIEW].showDishes(this[MODEL].getterDishes());
+        this[VIEW].bindShowRandProduct(this.handleShowProduct);
+
         this[VIEW].bindShowProduct(this.handleShowProduct);
     };
 
@@ -149,8 +166,22 @@ class RestaurantController{
         try {
           const product = this[MODEL].createDish(name, "","","");
           this[VIEW].showProduct(product);
+          this[VIEW].bindShowProductInNewWindow(
+            this.handleShowProductInNewWindow,
+          );
+        this[VIEW].closeWindows();
+
         } catch (error) {
           this[VIEW].showProduct(null, 'No existe este producto en la página.');
+        }
+    };
+
+    handleShowProductInNewWindow = (name) => {
+        try {
+          const product = this[MODEL].createDish(name, "","","");
+          this[VIEW].showProductInNewWindow(product);
+        } catch (error) {
+          this[VIEW].showProductInNewWindow(null, 'No existe este producto en la página.');
         }
     };
 

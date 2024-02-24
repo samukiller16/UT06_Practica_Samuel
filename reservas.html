@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/nosotros.css">
+    <link rel="stylesheet" href="css/reservas.css">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -24,7 +24,7 @@
                 <li><a href="#">Ubicación</a></li>
                 <li><a href="#">Menú</a></li>
                 <li><a href="#">Contacto</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="#">Reservas</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Categorías
@@ -43,37 +43,76 @@
         </ol>
     </nav>
 
-    <main itemscope itemtype="http://schema.org/Restaurant">
-        <h1 itemprop="name">Sobre Nosotros</h1>
-
-        <section id="welcome" itemprop="mainContentOfPage">
-            <article itemprop="about" itemscope itemtype="http://schema.org/AboutPage">
-                <h2 itemprop="name">Bienvenido a Bestaurant</h2>
-                <p itemprop="description">
-                    Descubre una experiencia culinaria excepcional en Bestaurant. Nuestro compromiso es ofrecer platos
-                    deliciosos
-                    con ingredientes frescos y de alta calidad.
-                </p>
-            </article>
-
-            <article itemprop="about" itemscope itemtype="http://schema.org/AboutPage">
-                <h2 itemprop="name">Nuestro propósito</h2>
-                <p itemprop="description">
-                    Apuntamos a ser el número 1 en el mundo de la restauración.
-                </p>
-                <p itemprop="description">
-                    Para más información, visite las distintas secciones.
-                </p>
-            </article>
-        </section>
-
-        <section itemprop="additionalProperty" itemscope itemtype="http://schema.org/Photograph">
-            <article>
-                <h2 itemprop="name">Imagen 360º de nuestro restaurante</h2>
-                <canvas id="imagen360" width="600px" height="400px"></canvas>
-            </article>
-        </section>
-    </main>
+    <div itemscope itemtype="http://schema.org/SearchAction">
+            <form
+              id="reservaForm"
+              action=""
+              method="get"
+              itemprop="potentialAction"
+            >
+              <label class="form__label" for="nombre">Nombre:</label>
+              <input
+                class="form__input"
+                type="text"
+                id="nombre"
+                name="nombre"
+                pattern="[A-Za-záéíóúÁÉÍÓÚ\s]+"
+                required
+              />
+  
+              <label class="form__label" for="apellidos">Apellidos:</label>
+              <input
+                class="form__input"
+                type="text"
+                id="apellidos"
+                name="apellidos"
+                pattern="[A-Za-záéíóúÁÉÍÓÚ\s]+"
+                required
+              />
+  
+              <label class="form__label" for="ocupantes"
+                >Número de Ocupantes:</label
+              >
+              <input
+                class="form__input"
+                type="number"
+                id="ocupantes"
+                name="ocupantes"
+                min="1"
+                required
+              />
+  
+              <label class="form__label" for="fecha">Fecha:</label>
+              <input
+                class="form__input"
+                type="date"
+                id="fecha"
+                name="fecha"
+                required
+              />
+  
+              <label class="form__label" for="hora">Hora:</label>
+              <input
+                class="form__input"
+                type="time"
+                id="hora"
+                name="hora"
+                required
+              />
+  
+              <label class="form__label" for="telefono">Teléfono:</label>
+              <input
+                class="form__input"
+                type="tel"
+                id="telefono"
+                name="telefono"
+                pattern="[0-9]{9}"
+                required
+              />
+  
+              <button class="form__button" type="submit">Reservar</button>
+            </form>
+    </div>
 
     <footer itemscope itemtype="http://schema.org/WPFooter">
         <div class="footer_owner" itemprop="author" itemscope itemtype="http://schema.org/Person">

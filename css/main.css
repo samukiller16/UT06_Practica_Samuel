@@ -28,8 +28,12 @@
 
 #mainnav a {
     text-decoration: none;
-    color: white; 
+    color: #000000; 
     font-weight: bold; 
+}
+
+#mainnav a:hover{
+    text-decoration: underline;
 }
 
 #mainnav nav{
@@ -60,13 +64,33 @@ footer{
     display: grid;
     grid-template-columns: 50% 50%;
     background-color: #ffd700;
-    color: white; 
+    color: black; 
     font-weight: bold;
     padding: 10px;
+    padding-top: 50px;
     align-items: center;
     justify-items: center;
 }
 
 footer img{
     width: 50px;
+}
+
+/* TOP ARROW */
+a:hover {
+	color: #ffd700;
+	text-decoration: none;
+}
+#toparrow {
+	font-size: 3em;
+	position: fixed;
+	display: none;
+	right: 15px;
+	bottom: 15px;
+	z-index: 995;
+}
+
+#toparrow:hover,
+#toparrow:focus {
+	color: #ffd700;
 }
